@@ -88,3 +88,13 @@ python3 tests/test_analyze.py && python3 tests/test_coverage.py   # 8 green
 `:pressure/links` can name a node in the **tsumugi** power-graph where a power-entity drives
 a pressure — the accountability bridge (aggregate-first) from ecological debt to the power
 that imposes it (danjo / keizu lineage). inochi observes; it does not adjudicate or target.
+## Standalone multirepo contract
+
+- `manifest.edn` is the canonical actor manifest; JSON is compatibility data only.
+- Generic publication invariants come from the SHA-pinned
+  `com.etzhayyim/social-publication` dependency.
+- IE-flow metrics, gates, and scoring come from the SHA-pinned
+  `com.etzhayyim/ie-flow` dependency, which pins `com.etzhayyim/kotoba-datom` transitively.
+- Source and tests use `src/inochi`, `test/inochi`, and repository-local data paths. Do not restore
+  `20-actors`, `70-tools`, or superproject-relative classpaths.
+- Run `./run_tests.sh` from a standalone checkout before committing.

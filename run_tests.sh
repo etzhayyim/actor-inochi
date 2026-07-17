@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
-# inochi — clj/bb test suite (ADR-2606160842 py->clj port wave). Auto-wired into the fleet
-# green-check; runs all cljc test namespaces via babashka from the repo root.
 set -euo pipefail
-cd "$(dirname "$0")/../.."
-exec bb -e '(require (quote clojure.test) (quote inochi.methods.test-datom-emit) (quote inochi.tests.test-analyze) (quote inochi.tests.test-coverage) (quote inochi.tests.test-kotoba))(let [r (apply clojure.test/run-tests (quote [inochi.methods.test-datom-emit inochi.tests.test-analyze inochi.tests.test-coverage inochi.tests.test-kotoba]))](System/exit (if (zero? (+ (:fail r) (:error r))) 0 1)))'
+cd "$(dirname "$0")"
+exec bb -e '
+(require (quote clojure.test)
+         (quote inochi.methods.test-datom-emit)
+         (quote inochi.methods.test-ie-flow)
+         (quote inochi.murakumo-test)
+         (quote inochi.social-publication-test)
+         (quote inochi.tests.test-analyze)
+         (quote inochi.tests.test-coverage)
+         (quote inochi.tests.test-kotoba)
+         (quote inochi.tests.test-systemic-pressures))
+(let [namespaces [                  (quote inochi.methods.test-datom-emit)
+                  (quote inochi.methods.test-ie-flow)
+                  (quote inochi.murakumo-test)
+                  (quote inochi.social-publication-test)
+                  (quote inochi.tests.test-analyze)
+                  (quote inochi.tests.test-coverage)
+                  (quote inochi.tests.test-kotoba)
+                  (quote inochi.tests.test-systemic-pressures)]
+      result (apply clojure.test/run-tests namespaces)]
+  (System/exit (if (zero? (+ (:fail result) (:error result))) 0 1)))'

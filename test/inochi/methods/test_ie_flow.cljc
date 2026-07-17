@@ -1,13 +1,13 @@
 #!/usr/bin/env bb
 ;; inochi 命 — ie-flow embedding tests (the SoS scoring leg).
-;; Run:  bb -cp "20-actors:70-tools/src:20-actors/kotodama/src" 20-actors/inochi/methods/test_ie_flow.cljc
+;; Run:  bb -cp "20-actors:70-tools/src:20-actors/kotodama/src" methods/test_ie_flow.cljc
 (ns inochi.methods.test-ie-flow
   (:require [inochi.methods.analyze :as an]
             [inochi.methods.ie-flow :as ief]
             [etzhayyim.ie-flow.score :as score]
             [clojure.test :refer [deftest is run-tests]]))
 
-(def seed-path "20-actors/inochi/data/seed-biosphere-graph.kotoba.edn")
+(def seed-path "data/seed-biosphere-graph.kotoba.edn")
 (defn- g [] (an/load-file* seed-path))
 
 (deftest events-well-formed
