@@ -1,6 +1,6 @@
 #!/usr/bin/env bb
 ;; inochi 命 — biosphere-ledger persistence + heartbeat tests.
-;; Run:  bb --classpath 20-actors 20-actors/inochi/tests/test_kotoba.cljc
+;; Run:  bb --classpath 20-actors tests/test_kotoba.cljc
 (ns inochi.tests.test-kotoba
   (:require [inochi.methods.kotoba :as k]
             [inochi.methods.autorun :as auto]

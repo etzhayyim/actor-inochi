@@ -1,6 +1,6 @@
 #!/usr/bin/env bb
 ;; inochi 命 — tests for the systemic-pressures (per-pressure reach) lens.
-;; Run:  bb --classpath 20-actors 20-actors/inochi/tests/test_systemic_pressures.cljc
+;; Run:  bb --classpath 20-actors tests/test_systemic_pressures.cljc
 (ns inochi.tests.test-systemic-pressures
   "Tests for systemic-pressures — ranking each ecological PRESSURE by how many DISTINCT bearers it
   threatens (breadth), so a threat spanning many ecosystems outranks one concentrated on a few. The

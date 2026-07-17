@@ -11,7 +11,7 @@
             [inochi.methods.datom-emit :as datom-emit]))
 
 (def seed
-  (-> (clojure.java.io/file *file*) .getParentFile .getParentFile
+  (-> (clojure.java.io/file (System/getProperty "user.dir"))
       (clojure.java.io/file "data" "seed-biosphere-graph.kotoba.edn")
       str))
 

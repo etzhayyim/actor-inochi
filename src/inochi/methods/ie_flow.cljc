@@ -23,7 +23,7 @@
             [etzhayyim.ie-flow.metrics :as iem]
             [clojure.string :as str]))
 
-(def default-seed "20-actors/inochi/data/seed-biosphere-graph.kotoba.edn")
+(def default-seed "data/seed-biosphere-graph.kotoba.edn")
 
 (defn- bearer-rows
   "Per-bearer rows: raw inbound :pressures load (volume — scattered ecological debt) +

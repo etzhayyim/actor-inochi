@@ -301,7 +301,7 @@
      "CLI entry: analyze a seed EDN graph → out/restoration-report.md (file I/O at the edge)."
      [& argv]
      (let [argv (vec argv)
-           here (-> *file* clojure.java.io/file .getParentFile .getParentFile)
+           here (clojure.java.io/file (System/getProperty "user.dir"))
            seed (if (and (seq argv) (not (str/starts-with? (first argv) "--")))
                   (clojure.java.io/file (first argv))
                   (clojure.java.io/file here "data" "seed-biosphere-graph.kotoba.edn"))
