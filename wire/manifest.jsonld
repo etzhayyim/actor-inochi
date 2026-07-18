@@ -15,7 +15,7 @@
   "dependsOnAdr": ["2606011000", "2606011500", "2605081300", "2605301600", "2605302300", "2606066000", "2605312345", "2605215000", "2605241500"],
   "schema": ["00-contracts/schemas/biosphere-ontology.kotoba.edn"],
   "substrate": {
-    "state": "kotoba Datom log (ADR-2605312345) — methods/datom_emit.py emits canonical EAVT",
+    "state": "kotoba Datom log (ADR-2605312345) — src/inochi/methods/datom_emit.cljc emits canonical EAVT",
     "largeAssets": "DataLad → IPFS (80-data/biosphere) — NO git-lfs",
     "inference": "Murakumo-only (ADR-2605215000)",
     "runtime": "kotoba pywasm actor (componentize-py) — pure-stdlib methods, no numpy"
@@ -25,7 +25,7 @@
   "cells": [
     {
       "id": "cell:inochi.analyze",
-      "method": "methods/analyze.py",
+      "method": "src/inochi/methods/analyze.cljc",
       "input": "data/seed-biosphere-graph.kotoba.edn",
       "output": ["out/restoration-report.md"],
       "pipeline": "load-edn → edge-primary integral (Σ incident inbound :pressures × disclosed IUCN weight) → restoration-priority + cascade-fragility + pressure-concentration, aggregate-first",
@@ -33,7 +33,7 @@
     },
     {
       "id": "cell:inochi.datom-emit",
-      "method": "methods/datom_emit.py",
+      "method": "src/inochi/methods/datom_emit.cljc",
       "input": "data/seed-biosphere-graph.kotoba.edn",
       "output": ["out/biosphere-datoms.kotoba.edn"],
       "pipeline": "ground EAVT datoms [e a v tx :add] (durable) + derived readouts flagged :bond/is-transient (computed on read, N1/G2)",
@@ -41,7 +41,7 @@
     },
     {
       "id": "cell:inochi.coverage",
-      "method": "methods/coverage_report.py",
+      "method": "src/inochi/methods/coverage_report.cljc",
       "input": "data/seed-biosphere-graph.kotoba.edn",
       "output": ["out/coverage-report.md"],
       "pipeline": "denominator (IUCN/described/estimated) + realm + biome + kingdom + pressure-kind → gap map",

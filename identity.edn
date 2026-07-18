@@ -1,0 +1,7 @@
+{:identity/id "did:web:etzhayyim.com:actor:inochi"
+ :identity/actor "inochi"
+ :identity/handle "inochi.etzhayyim.com"
+ :identity/ipns-key "inochi-actor"
+ :identity/canonical-document "manifest.edn"
+ :identity/external-did-document ".well-known/did.json"
+ :identity/canonical-format :edn}

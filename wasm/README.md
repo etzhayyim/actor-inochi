@@ -1,20 +1,20 @@
-# inochi 命 — kotoba pywasm actor (componentize-py)
+# inochi 命 — kotoba WASM actor boundary
 
-Design for running inochi's analyzer as a **kotoba pywasm actor** under the
+Historical design for running inochi's analyzer as a content-addressed actor under the
 "one Worker, many WASM actors" model (ADR-2606014500 / 2606014600). The only
 first-party Cloudflare Worker is `etzhayyim.com` (identity / `did.json`); the actor
 itself is a **content-addressed WASM component** fetched from IPFS and run **locally**
 (browser via ameno, or a donated mesh node via e7m-wasm-runner) — there is **no
 per-actor server** (no-server-key).
 
-## Why pywasm fits inochi
+## Current substrate
 
-inochi's methods are **pure-stdlib Python (no numpy)** precisely so they compile to a
-WASM Component via **componentize-py** (the watatsuna pattern, ADR-2606014600 — jco /
-Malacca top). The edge-primary 取-concentration is a graph integral over `:en/grasping-load`
-— no native BLAS, no heavy deps. The same code runs:
+The former Python implementation has been retired. Canonical implementations are portable
+CLJC under `src/inochi/methods/`; the mesh/runtime owns component compilation. The
+edge-primary 取-concentration remains a graph integral over `:en/grasping-load` with no
+native numerical dependency. The same source runs:
 
-- as a CLI cell (`python3 methods/analyze.py`) on a mesh node, and
+- as a substrate-native CLJC cell on a mesh node, and
 - in-WASM in the browser (ameno) with **zero server trust** — the reader recomputes the
   component CID and compares it to the DID-doc CID before executing.
 
@@ -36,7 +36,7 @@ world inochi-actor {
 }
 ```
 
-`analyze.py` / `datom_emit.py` / `coverage_report.py` become the three export bodies; the
+`analyze.cljc` / `datom_emit.cljc` / `coverage_report.cljc` provide the three bodies; the
 embedded seed is bundled read-only into the component (no filesystem at runtime).
 
 ## Build & verify (target)
