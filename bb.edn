@@ -2,6 +2,6 @@
  :deps {com.etzhayyim/social-publication
         {:git/url "https://github.com/etzhayyim/com-etzhayyim-social-publication.git"
          :git/sha "e8127d0661284b1c12ce1b216c84b5ed2db619ab"}
-        com.etzhayyim/ie-flow
-        {:git/url "https://github.com/etzhayyim/com-etzhayyim-ie-flow.git"
+        kotoba-lang/ie-flow
+        {:git/url "https://github.com/kotoba-lang/ie-flow.git"
          :git/sha "35d36d912c9596dbc5094947b60202d9abdf61e6"}}}
