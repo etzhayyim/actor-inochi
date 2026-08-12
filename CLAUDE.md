@@ -44,7 +44,7 @@ ontology (ADR-2606073000 §Context).
 ## Layout
 
 ```
-com-etzhayyim-inochi/
+actor-inochi/
 ├── CLAUDE.md                              # this file
 ├── manifest.edn                           # canonical actor manifest (3 cells, 8 gates)
 ├── data/
