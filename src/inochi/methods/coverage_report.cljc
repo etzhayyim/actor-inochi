@@ -7,7 +7,7 @@
   what is thin/missing. NOT a completeness claim: coverage of *all* species is ~0 by design.
 
   Pure fns; reuses inochi.methods.analyze for the loader. Portable .cljc."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [inochi.methods.analyze :as analyze]))
 
 ;; honest external denominators for the SPECIES count

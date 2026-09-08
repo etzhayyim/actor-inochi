@@ -16,7 +16,7 @@
   port is a separate unit, mirroring the rasen precedent). All four PURE analyze assertions
   are ported 1:1."
   (:require [clojure.test :refer [deftest is testing run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.set]
             [clojure.java.io :as io]
             [inochi.methods.analyze :as analyze]))

@@ -23,7 +23,7 @@
   appends to a local file. G1: the ledger is a RESTORATION map of the living world,
   NEVER a target-list — it carries no occurrence coordinates, only species/ecosystem
   nodes and the pressures they bear."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])))
 
 (defn add [entity attr value] [":db/add" entity attr value])
