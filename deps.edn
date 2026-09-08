@@ -1,5 +1,10 @@
 {:paths ["src" "test"]
- :deps {com.etzhayyim/social-publication
+ :deps {
+        ;; kotoba.lang.text, not clojure.string. Pinned as an explicit floor:
+        ;; tools.deps takes the NEWEST sha it is shown, so without a floor here
+        ;; this repo silently rides whatever a sibling happens to name.
+        io.github.kotoba-lang/text {:git/sha "73bdb13ae7a3d004b44bca08be03a3191157a38f"}
+       com.etzhayyim/social-publication
         {:git/url "https://github.com/etzhayyim/com-etzhayyim-social-publication.git"
          :git/sha "e8127d0661284b1c12ce1b216c84b5ed2db619ab"}
         kotoba-lang/ie-flow

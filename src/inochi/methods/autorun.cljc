@@ -14,7 +14,7 @@
   order (::node-order meta) + edges content-stable → resume-safe. IDEMPOTENT-BY-CONTENT: a
   beat whose ground datoms equal the previous beat's is a NO-OP. No-server-key: appends to
   a local file only, no network I/O. G1: a RESTORATION map, never a target-list (no coords)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [inochi.methods.datom-emit :as de]
             [inochi.methods.kotoba :as k]
             #?(:clj [clojure.java.io :as io])))

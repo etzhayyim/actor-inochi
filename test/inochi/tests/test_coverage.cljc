@@ -1,6 +1,6 @@
 (ns inochi.tests.test-coverage
   "inochi 命 — coverage-report tests (ADR-2606073000). 1:1 Clojure port of tests/test_coverage.py."
-  (:require [clojure.test :refer [deftest is run-tests]]
+  (:require [kotoba.lang.text] [clojure.test :refer [deftest is run-tests]]
             [clojure.java.io :as io]
             [inochi.methods.analyze :as analyze]
             [inochi.methods.coverage-report :as coverage]))
@@ -14,12 +14,12 @@
   (let [{:keys [nodes edges]} (load-seed)
         md (coverage/report nodes edges)]
     ;; honest denominator disclosure present
-    (is (clojure.string/includes? md "coverage of all life is ~0 by design"))
+    (is (kotoba.lang.text/includes? md "coverage of all life is ~0 by design"))
     ;; all three realms are represented in a real seed
-    (is (and (clojure.string/includes? md "terrestrial")
-             (clojure.string/includes? md "marine")))
+    (is (and (kotoba.lang.text/includes? md "terrestrial")
+             (kotoba.lang.text/includes? md "marine")))
     ;; the gap map names next-wave targets (freshwater/fungi/etc. are thin by design)
-    (is (clojure.string/includes? md "Gap map"))))
+    (is (kotoba.lang.text/includes? md "Gap map"))))
 
 (deftest test-realms-present
   (let [{:keys [nodes]} (load-seed)

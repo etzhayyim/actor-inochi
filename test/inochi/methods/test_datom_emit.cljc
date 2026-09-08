@@ -6,7 +6,7 @@
   carries ::node-order so emit walks nodes in EDN read order), analyzes, emits, and asserts
   the ground/transient split + determinism (repeat-emit byte-identical)."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [inochi.methods.analyze :as analyze]
             [inochi.methods.datom-emit :as datom-emit]))
 
