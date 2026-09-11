@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; inochi 命 — ie-flow embedding (the SoS scoring leg) via the shared gate-adapter.
 (ns inochi.methods.ie-flow
   "ie_flow.cljc — inochi 命 embeds the information-energy flow lifecycle (etzhayyim.ie-flow,

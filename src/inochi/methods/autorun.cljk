@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; inochi 命 — autonomous heartbeat: load the biosphere graph → append GROUND datoms.
 (ns inochi.methods.autorun
   "autorun.cljc — inochi 命 deterministic heartbeat (ADR-2606073000, tate/hinagata pattern).
