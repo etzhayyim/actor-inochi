@@ -65,7 +65,7 @@ actor-inochi/
 ## Run
 
 ```bash
-bb run_tests.clj
+bb run_tests.cljk
 ```
 
 ## Ontology (biosphere-ontology, `00-contracts/schemas/`)
@@ -91,4 +91,4 @@ that imposes it (danjo / keizu lineage). inochi observes; it does not adjudicate
   `com.etzhayyim/ie-flow` dependency, which pins `com.etzhayyim/kotoba-datom` transitively.
 - Source and tests use `src/inochi`, `test/inochi`, and repository-local data paths. Do not restore
   `20-actors`, `70-tools`, or superproject-relative classpaths.
-- Run `bb run_tests.clj` from a standalone checkout before committing.
+- Run `bb run_tests.cljk` from a standalone checkout before committing.
