@@ -13,5 +13,5 @@ Tamaki retains organism-level authority. The former repository name
 ## Verify
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```

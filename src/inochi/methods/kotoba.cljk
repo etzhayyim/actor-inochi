@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; inochi 命 — biosphere-graph DATOM-LOG writer (content-addressed commit-DAG).
 (ns inochi.methods.kotoba
   "kotoba.cljc — inochi 命 append-only BIOSPHERE LEDGER writer
