@@ -7,7 +7,7 @@
   ranked 取-holder is the PRESSURE (a restoration map, never a bearer target-list, G1); reach + load
   are edge-primary, counted on read (G2)."
   (:require [inochi.methods.analyze :as a]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def ^:private nodes
   {"p1" {":organism/kind" ":pressure" ":organism/label" "Deforestation"}
