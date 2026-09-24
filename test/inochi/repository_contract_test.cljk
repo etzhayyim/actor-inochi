@@ -1,5 +1,5 @@
 (ns inochi.repository-contract-test
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             [kotoba.io :as io]
             [kotoba.test :refer [deftest is]]))
 
