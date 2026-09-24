@@ -17,8 +17,8 @@
   are ported 1:1."
   (:require [kotoba.test :refer [deftest is testing run-tests]]
             [kotoba.lang.text :as str]
-            [clojure.set]
-            [clojure.java.io :as io]
+            [kotoba.lang.coll]
+            [kotoba.io :as io]
             [inochi.methods.analyze :as analyze]))
 
 (def actor-dir (io/file (System/getProperty "user.dir")))
@@ -31,7 +31,7 @@
     (is (>= (count nodes) 20) (str "expected a real seed, got " (count nodes) " nodes"))
     (is (>= (count edges) 30) (str "expected a real 縁 web, got " (count edges) " edges"))
     (let [kinds (set (map #(get % ":organism/kind") (vals nodes)))]
-      (is (clojure.set/subset? #{":species" ":pressure"} kinds)
+      (is (kotoba.lang.coll/subset? #{":species" ":pressure"} kinds)
           (str "missing core kinds: " kinds)))
     ;; every edge resolves to known endpoints (no dangling 縁)
     (doseq [e edges]
