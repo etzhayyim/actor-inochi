@@ -1,5 +1,5 @@
 (ns inochi.social-publication-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [inochi.cells.social-post.state-machine :as cell]
             [inochi.methods.social :as social]))
 
