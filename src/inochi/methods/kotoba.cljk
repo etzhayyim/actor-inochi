@@ -24,7 +24,7 @@
   NEVER a target-list — it carries no occurrence coordinates, only species/ecosystem
   nodes and the pressures they bear."
   (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str]
-            #?(:clj [clojure.java.io :as io])))
+            #?(:clj [kotoba.io :as io])))
 
 (defn add [entity attr value] [":db/add" entity attr value])
 
@@ -131,8 +131,8 @@
    (do
      (defn append-tx [tx log-path]
        (let [f (io/file log-path)]
-         (when-let [p (.getParentFile f)] (.mkdirs p))
-         (when-not (.exists f)
+         (when-let [p (io/parent-file f)] (io/mkdirs p))
+         (when-not (io/exists? f)
            (spit f (str ";; inochi 命 — BIOSPHERE LEDGER (append-only, content-addressed EAVT "
                         "commit-DAG of the living-world organism/ecosystem/pressure graph). Generated; "
                         "DO NOT hand-edit. A RESTORATION map, never a target-list (no coordinates). "
@@ -142,7 +142,7 @@
 
      (defn read-log [log-path]
        (let [f (io/file log-path)]
-         (if-not (.exists f) []
+         (if-not (io/exists? f) []
                  (->> (str/split-lines (slurp f))
                       (map str/trim)
                       (remove #(or (empty? %) (str/starts-with? % ";")))
