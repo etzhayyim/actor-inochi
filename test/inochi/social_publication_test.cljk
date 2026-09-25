@@ -1,5 +1,5 @@
 (ns inochi.social-publication-test
-  (:require [kotoba.test :refer [deftest is]]
+  (:require [kotoba.lang.error :as kerror] [kotoba.test :refer [deftest is]]
             [inochi.cells.social-post.state-machine :as cell]
             [inochi.methods.social :as social]))
 
@@ -12,4 +12,4 @@
     (is (false? (get post ":post/server-held-key")))
     (is (= cell/phase-drafted (get-in drafted ["cell_state" "phase"])))
     (is (= cell/phase-refused (get-in refused ["cell_state" "phase"])))
-    (is (thrown? clojure.lang.ExceptionInfo (social/build-live {})))))
+    (is (thrown? kerror/ExceptionInfo (social/build-live {})))))
